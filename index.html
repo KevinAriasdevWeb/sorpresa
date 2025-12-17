@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feliz 17 Mi Shamsho ❤️</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#1b0b2a;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#ff4d6d;
+      --accent2:#7c3aed;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 20%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(900px 700px at 80% 30%, rgba(255,77,109,.25), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+    .wrap{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:28px;
+      position:relative;
+    }
+    .card{
+      width:min(820px, 96vw);
+      background: rgba(15,23,42,.75);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .glow{
+      position:absolute; inset:-120px -120px auto auto;
+      width:320px; height:320px;
+      background: radial-gradient(circle, rgba(255,77,109,.35), transparent 60%);
+      filter: blur(12px);
+      pointer-events:none;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{ transform: translate(0,0) }
+      50%{ transform: translate(-14px, 10px) }
+    }
+    header{
+      padding:28px 28px 18px;
+      display:flex; gap:18px; align-items:center; justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .title{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(22px, 3.2vw, 34px);
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size: 14px;
+    }
+
+    .heart{
+      width:64px; height:64px;
+      display:grid; place-items:center;
+      background: rgba(255,77,109,.12);
+      border:1px solid rgba(255,77,109,.25);
+      border-radius: 18px;
+      position:relative;
+      flex:0 0 auto;
+    }
+    .heart svg{
+      width:34px; height:34px;
+      fill: var(--accent);
+      filter: drop-shadow(0 10px 18px rgba(255,77,109,.35));
+      animation: beat 1.05s ease-in-out infinite;
+      transform-origin:center;
+    }
+    @keyframes beat{
+      0%,100%{ transform: scale(1) }
+      50%{ transform: scale(1.12) }
+    }
+
+    main{ padding: 22px 28px 28px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      background: rgba(2,6,23,.35);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .panel h2{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .msg{
+      margin:0;
+      color:#e6e8ef;
+      font-size: 15px;
+      line-height:1.6;
+    }
+    .chips{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .chip{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
+
+    .counter{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .stat{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.05);
+      padding:12px;
+      min-height:68px;
+    }
+    .stat .k{
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:.3px;
+      text-transform:uppercase;
+    }
+    .stat .v{
+      font-size:22px;
+      margin-top:6px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    button{
+      appearance:none;
+      border:0;
+      border-radius: 14px;
+      padding:10px 12px;
+      font-weight:600;
+      cursor:pointer;
+      color:var(--text);
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      transition: transform .08s ease, background .2s ease;
+    }
+    button:hover{ background: rgba(255,255,255,.12) }
+    button:active{ transform: translateY(1px) }
+
+    .primary{
+      background: linear-gradient(135deg, rgba(255,77,109,.95), rgba(124,58,237,.85));
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .primary:hover{ filter: brightness(1.06) }
+
+    footer{
+      padding: 0 28px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* Confetti canvas */
+    canvas#confetti{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index: 5;
+    }
+    /* Small sparkles */
+    .sparkle{
+      position:absolute;
+      width:10px; height:10px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.9), rgba(255,255,255,0) 60%);
+      opacity:.7;
+      filter: blur(.2px);
+      animation: drift 7s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes drift{
+      from{ transform: translateY(0) translateX(0); opacity:.65 }
+      to{ transform: translateY(220px) translateX(40px); opacity:0 }
+    }
+    .note{
+      margin-top:10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .link{
+      color:#c4b5fd;
+      text-decoration:none;
+      border-bottom:1px dashed rgba(196,181,253,.45);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+
+  <div class="wrap">
+    <div class="card" role="article" aria-label="Tarjeta de aniversario">
+      <div class="glow" aria-hidden="true"></div>
+
+      <header>
+        <div style="display:flex; gap:14px; align-items:center;">
+          <div class="heart" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.2-4.6-9.6-9C.7 8.5 2.5 5.5 6 5.1c1.8-.2 3.4.6 4.3 1.8.9-1.2 2.5-2 4.3-1.8 3.5.4 5.3 3.4 3.6 6.9C19.2 16.4 12 21 12 21z"/></svg>
+          </div>
+          <div class="title">
+            <h1 id="headline">Feliz aniversario, Mi Shamsho ❤️</h1>
+            <div class="subtitle" id="subhead">6 años juntos y contando.</div>
+          </div>
+        </div>
+
+        <button class="primary" id="btnCelebrate">🎉 Tocame! </button>
+      </header>
+
+      <main>
+        <div class="grid">
+          <section class="panel">
+            <h2>Mi mensaje</h2>
+            <p class="msg" id="message">
+              Hoy cumplimos 6 años mi amorcito, y sigo eligiéndote. Gracias por cada risa, cada apoyo y por ser mi lugar seguro.
+              Te amo mi Gordito Hermoso. ❤️❤️❤️
+            </p>
+
+            <div class="chips" aria-label="Detalles">
+              <span class="chip">❤️ Mi unico y verdadero Amor</span>
+              <span class="chip">🤝 Compañero de vida</span>
+              <span class="chip">✨ Futuro</span>
+              <span class="chip">🏡 Hogar</span>
+              <span class="chip">❤️J+K❤️</span>
+              
+            </div>
+
+            <div class="note">
+              
+            </div>
+          </section>
+
+          <aside class="panel">
+            <h2>Tiempo juntos</h2>
+            <div class="counter" aria-label="Contador">
+              <div class="stat"><div class="k">Años</div><div class="v" id="years">—</div></div>
+              <div class="stat"><div class="k">Meses</div><div class="v" id="months">—</div></div>
+              <div class="stat"><div class="k">Días</div><div class="v" id="days">—</div></div>
+              <div class="stat"><div class="k">Horas</div><div class="v" id="hours">—</div></div>
+            </div>
+
+            <div class="actions">
+              <button id="btnCopy"hidden>📋 Copiar link</button>
+              <button id="btnToggleMusic"hidden>🎵 Música</button>
+              <button id="btnAltMsg">💌 Otro mensaje</button>
+            </div>
+
+            <p class="note">
+             .
+            </p>
+          </aside>
+        </div>
+      </main>
+
+      <footer>
+        <div>❤️J+K❤️ .</div>
+        <div>
+          
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <audio id="music" loop>
+    <!-- Música súper suave: tono generado en JS (no archivos externos). -->
+  </audio>
+
+  <script>
+    // ========= PERSONALIZA AQUÍ =========
+    const NOMBRE = "Oso(jose)";
+    const ANIOS = 6; // solo para el subtítulo
+    // Pon la fecha/hora real en que empezaron (formato: "YYYY-MM-DDTHH:MM:SS")
+    const START_DATE = "2019-12-17"; // <-- cambia esto
+    // ====================================
+
+    // Textos
+    const headline = document.getElementById("headline");
+    const subhead = document.getElementById("subhead");
+    const message = document.getElementById("message");
+    headline.textContent = `Feliz aniversario mi ${NOMBRE} ❤️`;
+    subhead.textContent = `${ANIOS} años juntos y contando.`;
+
+    // Mensajes alternativos
+    const alt = [
+      `Te elijo todos los días mi gordito hermoso. Feliz Aniversario mi ${NOMBRE}. ❤️`,
+      `Gracias por crecer conmigo y confiar en nosotros. Vamos por muchos años más mi ${NOMBRE}. ✨`,
+      `Eres mi paz, mi hogar y todo mi shamsho. Te amo muchooooo mi, ${NOMBRE}. 💜`,
+      `6 años juntos y todavía me emocionas como el primer dia cuando nos vimos <3. Feliz aniversario, ${NOMBRE}. 🎈`
+    ];
+    let altIdx = 0;
+    document.getElementById("btnAltMsg").addEventListener("click", () => {
+      altIdx = (altIdx + 1) % alt.length;
+      message.textContent = alt[altIdx];
+      celebrate(120);
+    });
+
+    // Contador “tiempo juntos” (aprox: años/meses con calendario real)
+    const start = new Date(START_DATE);
+    const out = {
+      years: document.getElementById("years"),
+      months: document.getElementById("months"),
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+    };
+
+    function diffParts(from, to){
+      // calcula años y meses "calendario"
+      let y = to.getFullYear() - from.getFullYear();
+      let m = to.getMonth() - from.getMonth();
+      let d = to.getDate() - from.getDate();
+
+      if (d < 0) {
+        // pedir días del mes anterior
+        const prevMonth = new Date(to.getFullYear(), to.getMonth(), 0).getDate();
+        d += prevMonth;
+        m -= 1;
+      }
+      if (m < 0) { m += 12; y -= 1; }
+
+      // horas restante del día (aprox)
+      const sameDayFrom = new Date(to.getFullYear(), to.getMonth(), to.getDate(), from.getHours(), from.getMinutes(), from.getSeconds());
+      let hours = Math.floor((to - sameDayFrom) / 36e5);
+      hours = (hours % 24 + 24) % 24;
+
+      return { y, m, d, hours };
+    }
+
+    function tick(){
+      const now = new Date();
+      const p = diffParts(start, now);
+      out.years.textContent = p.y;
+      out.months.textContent = p.m;
+      out.days.textContent = p.d;
+      out.hours.textContent = p.hours;
+      requestAnimationFrame(() => {}); // noop para suavidad
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Copy (si la subes a web)
+    document.getElementById("btnCopy").addEventListener("click", async () => {
+      const text = location.href;
+      try{
+        await navigator.clipboard.writeText(text);
+        toast("Link copiado ✨");
+      }catch{
+        toast("No pude copiar (prueba manual) 😅");
+      }
+    });
+
+    // Mini-toast
+    let toastEl;
+    function toast(t){
+      if(!toastEl){
+        toastEl = document.createElement("div");
+        toastEl.style.cssText = `
+          position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
+          background: rgba(2,6,23,.85); color:#e5e7eb;
+          border:1px solid rgba(255,255,255,.12);
+          padding:10px 12px; border-radius:14px; z-index:20;
+          box-shadow: 0 18px 45px rgba(0,0,0,.45);
+          font-size:13px; backdrop-filter: blur(10px);
+        `;
+        document.body.appendChild(toastEl);
+      }
+      toastEl.textContent = t;
+      toastEl.style.opacity = "1";
+      clearTimeout(toastEl._t);
+      toastEl._t = setTimeout(()=> toastEl.style.opacity = "0", 1600);
+    }
+
+    // Sparkles decorativas
+    for(let i=0;i<14;i++){
+      const s = document.createElement("div");
+      s.className = "sparkle";
+      s.style.left = Math.random()*100 + "vw";
+      s.style.top = (Math.random()*30) + "vh";
+      s.style.animationDelay = (Math.random()*4) + "s";
+      s.style.transform = `translateY(${Math.random()*60}px)`;
+      s.style.opacity = (0.35 + Math.random()*0.45).toFixed(2);
+      document.body.appendChild(s);
+    }
+
+    // Confetti simple en canvas
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    let W, H;
+    function resize(){
+      W = canvas.width = window.innerWidth * devicePixelRatio;
+      H = canvas.height = window.innerHeight * devicePixelRatio;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    let pieces = [];
+    function rand(min,max){ return Math.random()*(max-min)+min; }
+
+    function celebrate(amount=160){
+      for(let i=0;i<amount;i++){
+        pieces.push({
+          x: rand(0,W),
+          y: rand(-H*0.2, 0),
+          r: rand(4, 10) * devicePixelRatio,
+          vx: rand(-1.5, 1.5) * devicePixelRatio,
+          vy: rand(2.4, 5.4) * devicePixelRatio,
+          rot: rand(0, Math.PI),
+          vr: rand(-0.08, 0.08),
+          // paleta simple (no hardcode de CSS)
+          c: (Math.random()<0.5) ? "rgba(255,77,109,.95)" : "rgba(124,58,237,.95)",
+          life: rand(120, 220)
+        });
+      }
+    }
+
+    function animate(){
+      ctx.clearRect(0,0,W,H);
+      pieces = pieces.filter(p => p.life > 0 && p.y < H + 40*devicePixelRatio);
+      for(const p of pieces){
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life -= 1;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.7);
+        ctx.restore();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    document.getElementById("btnCelebrate").addEventListener("click", () => celebrate(220));
+
+    // Música: tono suave generado (sin archivos externos)
+    let audioOn = false;
+    let audioCtx, osc, gain;
+    document.getElementById("btnToggleMusic").addEventListener("click", () => {
+      if(!audioOn){
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        osc = audioCtx.createOscillator();
+        gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = 196; // G3 suave
+        gain.gain.value = 0.0001;
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start();
+
+        // fade-in
+        const t = audioCtx.currentTime;
+        gain.gain.setValueAtTime(0.0001, t);
+        gain.gain.exponentialRampToValueAtTime(0.03, t + 1.2);
+
+        audioOn = true;
+        toast("Música ON 🎵");
+        celebrate(90);
+      } else {
+        try{
+          const t = audioCtx.currentTime;
+          gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.6);
+          setTimeout(()=>{ osc.stop(); audioCtx.close(); }, 650);
+        }catch{}
+        audioOn = false;
+        toast("Música OFF");
+      }
+    });
+
+    // auto celebracion al cargar
+    setTimeout(() => celebrate(160), 450);
+  </script>
+</body>
+</html>
